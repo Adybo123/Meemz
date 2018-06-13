@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Meemz</title>
+    <link rel="stylesheet" href="meemz.css">
+    <link rel="stylesheet" href="animate.css">
+    <script>const MeemzCore = require("./js/MeemzCore.js");</script>
+  </head>
+  <body style="background-color: #44d3aa;">
+    <div id="titleBar">
+      <b style="padding-left: 10px;">Meemz</b><span id="postTitle"></span>
+      <span id="btns"><span class="tskBtn" onclick="minimise();">&#128469;</span> <span class="tskBtn" onclick="maximise();">&#128470;</span> <span class="tskBtn" onclick="wnClose();" style="position:relative;top:2px;">&#88;</span></span>
+    </div>
+    <div id="topContain">
+      <div id="modalFade" class="animated hidden"></div>
+      <div id="infoModal">
+        <span class="modalHeader">How does this work?</span>
+        <span class="modalBody">Click anywhere for the next meme. Meemz garuntees you will never see the same meme again, even between restarts. Source: /r/memes subreddit
+        <br /><br />Right-click usernames or memes to copy.</span>
+      </div>
+      <div id="imgContainer" class="animated hidden"></div>
+      <span id="memeTag">/u/Adybo123</span>
+      <div class="meemzLogo"><img src="meemz.png" alt="meemz logo"/></div>
+    </div>
+    <script>
+      const { remote, BrowserWindow } = require('electron')
+      const currentWindow = remote.getCurrentWindow()
+      function minimise() {
+        currentWindow.minimize();
+      }
+      var isM = false;
+      function maximise() {
+        if (!isM) {
+          isM = true;
+          currentWindow.maximize();
+        } else {
+          isM = false;
+          currentWindow.unmaximize();
+        }
+      }
+      function wnClose() {
+        currentWindow.close();
+      }
+      MeemzCore.meemzInit();
+    </script>
+  </body>
+</html>

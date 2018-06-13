@@ -1,0 +1,25 @@
+{
+  "name": "meemz",
+  "version": "0.0.1",
+  "description": "A quick and easy to use meme browsing client",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "package-mac": "electron-packager . --overwrite --platform=mac --arch=x64 --icon=images/icon.icns --prune=false --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=false --platform=win32 --arch=all --icon=images/icon.ico --prune=false --out=release-builds --version-string.CompanyName=\"DeeBo - overflo.me\" --version-string.FileDescription=\"A cross-platform Electron based Reddit Meme viewer.\" --version-string.ProductName=\"Meemz\" --app-copyright \"Copyright (C) 2018 DeeBo\"",
+    "package-linux": "electron-packager . --overwrite --platform=linux --arch=x64 --icon=images/icon.png --prune=false --out=release-builds"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  },
+  "keywords": [
+    "memes",
+    "Electron",
+    "reddit"
+  ],
+  "author": "DeeBo",
+  "license": "CCBY-4.0",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  }
+}

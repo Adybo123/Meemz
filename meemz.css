@@ -1,0 +1,108 @@
+html, body {
+  padding: 0; margin: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.tskBtn {
+  cursor: pointer;
+  display: inline-block;
+}
+
+#topContain {
+  width: 100%;
+  height: calc(100% - 30px);
+  position: fixed;
+  top: 30px; left: 0;
+}
+
+#titleBar {
+  cursor: default;
+  user-select: none;
+  -webkit-app-region: drag;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(0,0,0,0.6);
+  line-height: 30px;
+  color: white;
+  z-index: 9999;
+}
+#btns {
+  -webkit-app-region: no-drag;
+  display: block;
+  padding-right: 10px;
+  float: right;
+  text-align: right;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+#modalFade {
+  position: fixed;
+  top: 30px; left: 0;
+  z-index: 2;
+  width: 100%; height: calc(100% - 30px);
+  background-color: #246c57;
+}
+
+#infoModal {
+  z-index: 4;
+  width: 340px;
+  height: 170px;
+  position: fixed;
+  left: calc(50% - 190px);
+  top: calc(50% - 105px);
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+#imgContainer {
+  position: fixed;
+  top: 30px; left: 0;
+  z-index: 5;
+  width: 100%;
+  height: calc(100% - 30px);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.modalHeader {
+  font-weight: bold;
+  display: block;
+  font-size: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.meemzLogo {
+  z-index: 1;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 400px;
+  opacity: 0.3;
+}
+.meemzLogo > img {
+  z-index: 1;
+  width: 100%;
+  opacity: inherit;
+}
+
+#memeTag {
+  z-index: 6;
+  display: block;
+  position: fixed;
+  bottom: 0; right: 0;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border-top-left-radius: 5px;
+  padding: 10px;
+}
